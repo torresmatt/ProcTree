@@ -1,14 +1,19 @@
+// initial values for branch width and length
 float firstWidth = 18;
 float firstLength = 175;
 
+// upper and lower bounds for the random percentage by which branches will be shrunk each iteration
 float minScale = .5;
 float maxScale = .8;
 
+// lower threshold for branch width and length. recursion will stop when either is reached
 float minWidth = 1;
 float minLength = 1;
 
+// custom color for branch color
 color trunk = color(92,64,51);
 
+// shape object to be loaded with graphic for leaf
 PShape leaf;
 
 void setup() {
