@@ -54,11 +54,11 @@ void tree(float w, float l) {
  
   // come up with 3 random angles for branches
   // first angle -90 to 0
-  float angle1 = random(-45, -33);
+  float angle1 = random(-50, -33);
   // second angle from first angle to first angle plus 90
   float angle2 = random(-33, 33);  
   // third angle from angle2 to angle2 + 90
-  float angle3 = random(33, 45);
+  float angle3 = random(33, 50);
   // make sure angle3 doesnt go past 75
   angle3 = constrain(angle3,angle2,75);
   
