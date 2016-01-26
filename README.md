@@ -1,1 +1,1 @@
-"# ProcTree" 
+This a Processing sketch that will generate a recursively generated tree with leaves on it by drawing branches and shrinking them through each iteration until they reach a certain size, at which point recursion ends.
