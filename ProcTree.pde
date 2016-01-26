@@ -27,7 +27,7 @@ void setup() {
 void draw() {
 }
 
-void mouseClicked() {
+void mousePressed() {
   // move to mouse position
   translate(mouseX,mouseY);
   // just for fun, seed the random generator to where the
