@@ -1,5 +1,5 @@
-float firstWidth = 8;
-float firstLength = 75;
+float firstWidth = 18;
+float firstLength = 175;
 
 float minScale = .5;
 float maxScale = .8;
@@ -20,7 +20,8 @@ void setup() {
   leaf = loadShape("leaf.svg");
 
   // make it so lower left is 0,0 now.
-  translate(0,height); 
+  translate(0,height);
+  // make it so coords go up for y
   scale(1,-1);
 }
 
@@ -30,18 +31,16 @@ void draw() {
 void mousePressed() {
   // move to mouse position
   translate(mouseX,mouseY);
-  // just for fun, seed the random generator to where the
-  randomSeed((long) random(mouseX, mouseY));
   // rotate so that measurements are more intuitive
   rotate(radians(180));
-  tree(firstWidth,firstLength);
+  tree(firstWidth * random(minScale,maxScale),firstLength * random(minScale,maxScale));
 }
 
 void tree(float w, float l) {
   // if this line is too thin or too short, draw "leaf" and stop
   if (w < minWidth || l < minLength) {
     pushMatrix();
-    shape(leaf,0,0,7,7);
+    shape(leaf,0,0,constrain(w*15,3,10),constrain(w*15,3,10));
     popMatrix();
     return;
   }
