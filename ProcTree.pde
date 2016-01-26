@@ -28,7 +28,11 @@ void draw() {
 }
 
 void mouseClicked() {
+  // move to mouse position
   translate(mouseX,mouseY);
+  // just for fun, seed the random generator to where the
+  randomSeed((long) random(mouseX, mouseY));
+  // rotate so that measurements are more intuitive
   rotate(radians(180));
   tree(firstWidth,firstLength);
 }
@@ -50,13 +54,13 @@ void tree(float w, float l) {
  
   // come up with 3 random angles for branches
   // first angle -90 to 0
-  float angle1 = random(-90, -45);
+  float angle1 = random(-45, -33);
   // second angle from first angle to first angle plus 90
-  float angle2 = random(-45, 0);  
+  float angle2 = random(-33, 33);  
   // third angle from angle2 to angle2 + 90
-  float angle3 = random(0, 45);
-  // make sure angle3 doesnt go past 90
-  angle3 = constrain(angle3,angle2,90);
+  float angle3 = random(33, 45);
+  // make sure angle3 doesnt go past 75
+  angle3 = constrain(angle3,angle2,75);
   
   //make random shrink factors for length and width for first branch
   float shrinkWidth = random(minScale,maxScale);
