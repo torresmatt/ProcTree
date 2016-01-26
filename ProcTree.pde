@@ -13,7 +13,7 @@ PShape leaf;
 
 void setup() {
   // setup the window (size and color)
-  size(800,800);
+  fullScreen();
   stroke(trunk);
 
   // set up the leaf shape
